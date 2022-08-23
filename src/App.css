@@ -1,0 +1,62 @@
+.App {
+    padding: 2rem;
+    border: 1px solid #ffa86e;
+    margin: 3rem auto;
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+form {
+    display: flex;
+}
+
+*:focus {
+    outline: none;
+}
+
+form input {
+    padding: 0.5rem 0.2rem;
+    border: none;
+    width: 100%;
+}
+
+form button {
+    background: #ffa86e;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s;
+    display: flex;
+}
+
+form button:hover {
+    background: #ff9853;
+}
+
+form select {
+    border: none;
+    margin-left: 1rem;
+}
+
+header {
+    text-align: center;
+}
+
+.todo-list {
+    list-style: none;
+}
+
+.todo-list li {
+    border-bottom: 1px solid #424242;
+    padding: 1rem 0;
+}
+
+.todo-list li.completed {
+    text-decoration: line-through;
+    font-style: italic;
+    color: #8f8f8f;
+}
