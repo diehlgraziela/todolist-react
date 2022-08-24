@@ -18,6 +18,8 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
             },
         ]);
         setInputText("");
+
+        //console.log(inputText);
     }
 
     return (

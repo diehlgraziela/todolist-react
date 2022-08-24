@@ -63,7 +63,7 @@ header {
     flex: 1;
 }
 
-.todo.completed {
+.todo .todo-item.completed {
     text-decoration: line-through;
     font-style: italic;
     color: #8f8f8f;
