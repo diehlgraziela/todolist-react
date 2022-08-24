@@ -63,10 +63,14 @@ header {
     flex: 1;
 }
 
-.todo .todo-item.completed {
+.todo.completed .todo-item{
     text-decoration: line-through;
-    font-style: italic;
-    color: #8f8f8f;
+    opacity: 0.4;
+}
+
+.todo.completed .complete-btn,
+.todo.completed .delete-btn{
+    opacity: 0.4;
 }
 
 .todo button {

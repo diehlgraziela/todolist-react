@@ -7,11 +7,11 @@ import { AiOutlineCheck } from 'react-icons/ai';
 
 const Todo = ({ text, todo, todos, setTodos }) => {
     //Events
-    const deleteHandler = () => {
+    const deleteTodo = () => {
         setTodos(todos.filter((el) => el.id !== todo.id));
     }
 
-    const completeHandler = () => {
+    const completeTodo = () => {
         setTodos(todos.map(item => {
             if (item.id === todo.id) {
                 return {
@@ -24,10 +24,10 @@ const Todo = ({ text, todo, todos, setTodos }) => {
     }
 
     return (
-        <div className="todo">
-            <li className={`todo-item ${todo.completed ? "completed" : ''}`}>{text}</li>
-            <button onClick={completeHandler} className="complete-btn"><AiOutlineCheck /></button>
-            <button onClick={deleteHandler} className="delete-btn"><AiOutlineDelete /></button>
+        <div className={`todo ${todo.completed ? "completed" : ''}`}>
+            <li className={`todo-item`}>{text}</li>
+            <button onClick={completeTodo} className="complete-btn"><AiOutlineCheck aria-label="Completar" /></button>
+            <button onClick={deleteTodo} className="delete-btn"><AiOutlineDelete aria-label="Deletar" /></button>
         </div>
     )
 }

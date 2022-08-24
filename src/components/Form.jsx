@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 //Icons
 import { AiOutlinePlus } from 'react-icons/ai';
 
 const Form = ({ inputText, setInputText, todos, setTodos }) => {
+    const [id, setId] = useState(0);
+
     const inputTextHandler = (e) => {
         setInputText(e.target.value);
     }
@@ -14,9 +16,10 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
             {
                 text: inputText,
                 completed: false,
-                id: Math.random() * 1000
+                id: id,
             },
         ]);
+        setId(id + 1);
         setInputText("");
 
         //console.log(inputText);
@@ -31,7 +34,7 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
                 placeholder="Adicionar uma tarefa"
             />
 
-            <button onClick={submitTodoHandler} type="submit"><AiOutlinePlus /></button>
+            <button onClick={submitTodoHandler} type="submit"><AiOutlinePlus aria-label="Enviar" /></button>
 
             <select name="todos" className="filter-todo">
                 <option value="all">Todos</option>
