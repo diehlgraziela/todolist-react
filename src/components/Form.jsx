@@ -2,13 +2,36 @@ import React from 'react';
 //Icons
 import { AiOutlinePlus } from 'react-icons/ai';
 
-const Form = () => {
+const Form = ({ inputText, setInputText, todos, setTodos }) => {
+    const inputTextHandler = (e) => {
+        setInputText(e.target.value);
+    }
+
+    const submitTodoHandler = (e) => {
+        e.preventDefault();
+        setTodos([
+            ...todos,
+            {
+                text: inputText,
+                completed: false,
+                id: Math.random() * 1000
+            },
+        ]);
+        setInputText("");
+    }
+
     return (
         <form>
-            <input type="text" placeholder="Adicionar uma tarefa" />
-            <button type="submit"><AiOutlinePlus /></button>
+            <input
+                value={inputText}
+                onChange={inputTextHandler}
+                type="text"
+                placeholder="Adicionar uma tarefa"
+            />
 
-            <select name="todos" class="filter-todo">
+            <button onClick={submitTodoHandler} type="submit"><AiOutlinePlus /></button>
+
+            <select name="todos" className="filter-todo">
                 <option value="all">Todos</option>
                 <option value="done">Concluídos</option>
                 <option value="todo">A fazer</option>

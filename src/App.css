@@ -50,13 +50,36 @@ header {
     list-style: none;
 }
 
-.todo-list li {
+.todo {
     border-bottom: 1px solid #424242;
     padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
 }
 
-.todo-list li.completed {
+.todo li {
+    flex: 1;
+}
+
+.todo.completed {
     text-decoration: line-through;
     font-style: italic;
     color: #8f8f8f;
+}
+
+.todo button {
+    cursor: pointer;
+    background: #ffa86e;
+    border: none;
+    font-size: 1rem;
+    padding: 0.3rem;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.todo button:hover {
+    background: #ff9853;
 }
