@@ -11,6 +11,7 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
 
     const submitTodoHandler = (e) => {
         e.preventDefault();
+        //set previous todo's properties and add text, completed and id
         setTodos([
             ...todos,
             {
@@ -21,6 +22,12 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
         ]);
         setId(id + 1);
         setInputText("");
+
+        //empty input validation
+        if (inputText == "") {
+            setTodos([...todos])
+            setId(id);
+        }
 
         //console.log(inputText);
     }
