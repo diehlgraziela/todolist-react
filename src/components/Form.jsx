@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 
 const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
-  const [id, setId] = useState(0);
+  //const [id, setId] = useState(0);
 
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
@@ -17,16 +17,17 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
       {
         text: inputText,
         completed: false,
-        id: id,
+        //id: id
+        id: Math.random() * 100,
       },
     ]);
-    setId(id + 1);
+    //setId(id + 1);
     setInputText("");
 
     //empty input validation
     if (inputText == "") {
       setTodos([...todos]);
-      setId(id);
+      //setId(id);
     }
 
     //console.log(inputText);
